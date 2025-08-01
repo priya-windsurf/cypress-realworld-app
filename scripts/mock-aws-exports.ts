@@ -1,6 +1,22 @@
-// mock aws-exports.js
+interface CognitoConfig {
+  Auth: {
+    Cognito: {
+      userPoolId: string;
+      userPoolClientId: string;
+      loginWith: {
+        oauth: {
+          domain: string;
+          scopes: string[];
+          redirectSignIn: string[];
+          redirectSignOut: string[];
+          responseType: string;
+        };
+      };
+    };
+  };
+}
 
-const awsmobile = {
+const awsmobile: CognitoConfig = {
   Auth: {
     Cognito: {
       userPoolId: "us-east-1_abcdefghi",
