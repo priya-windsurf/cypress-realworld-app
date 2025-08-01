@@ -12,6 +12,10 @@
 </p>
 
 <p align="center">
+  Built with a comprehensive TypeScript framework foundation for robust end-to-end testing
+</p>
+
+<p align="center">
    <a href="https://cloud.cypress.io/projects/7s5okt/runs">
     <img src="https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/detailed/7s5okt/develop&style=flat&logo=cypress" />
   </a>
@@ -102,6 +106,10 @@ PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn install
 ```shell
 yarn dev
 ```
+
+> 💡 **TypeScript Framework**
+>
+> This application now uses TypeScript throughout the testing framework, providing better type safety and developer experience. All setup files and utilities have been migrated from JavaScript to TypeScript.
 
 > 🚩 **Note**
 >
@@ -241,7 +249,7 @@ Prerequisites include an [Amazon Cognito][cognito] account. Environment variable
 The test knobs are in a few places:
 
 - The `.env` file has `VITE_AUTH_TOKEN_NAME` and vars beginning `AWS_COGNITO`. Be careful not to commit any secrets.
-- Both `scripts/mock-aws-exports.js` and `scripts/mock-aws-exports-es5.js` must have the same data; only their export statements differ. These files can be edited manually or exported from the amplify CLI.
+- Both `scripts/mock-aws-exports.ts` and `scripts/mock-aws-exports-es5.ts` must have the same data; only their export statements differ. These files can be edited manually or exported from the amplify CLI.
 - `cypress.config.ts` has `cognito_programmatic_login` to control flavor of the test.
 
 To start the application with Cognito, replace the current **src/index.tsx** file with the **src/index.cognito.tsx** file and start the application with `yarn dev:cognito` and run Cypress with `yarn cypress:open`. `yarn dev` may need to have been run once first.
